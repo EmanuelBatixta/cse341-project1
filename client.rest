@@ -1,0 +1,33 @@
+#### GET ALL CONTACTS
+GET http://localhost:3300/contacts/
+
+#### GET CONTACT BY ID
+GET http://localhost:3300/contacts/68c051b52071f70ace9096cf
+
+
+#### CREATE A NEW CONTACT
+POST http://localhost:3300/contacts/
+Content-Type: application/json
+
+{
+    "fname": "Joyce",
+    "lname": "Batista",
+    "email": "joycebatista@gmail.com",
+    "favColor": "black",
+    "bday": "22/11/2001"
+}
+
+#### UPDATE A CONTACT
+PUT http://localhost:3300/contacts/68c051b52071f70ace9096cf
+Content-Type: application/json
+
+{
+    "fname": "Jhon",
+    "lname": "Smith",
+    "email": "jhon.smith@gmail.com",
+    "favColor": "black",
+    "bday": "22/11/2001"
+}
+
+##### DELETE A CONTACT
+DELETE http://localhost:3300/contacts/68c051b52071f70ace9096cf

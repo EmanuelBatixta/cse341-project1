@@ -54,7 +54,7 @@ user.update = async (id, contactData) => {
 user.delete = async (id) => {
     try{
         const result = await model.findByIdAndDelete(id)
-
+        
         return result
     } catch(e){
         throw new Error("Error deleting contact: " + e.message)

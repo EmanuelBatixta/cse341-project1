@@ -32,4 +32,25 @@ ctrl.getContactById = async (req, res) =>{
     }
 }
 
+ctrl.updateContact = async (req, res) =>{
+    const id = req.params.id
+    const { fname, lname, email, favColor, bday} = req.body
+    const result = await contactModel.update(id, {fname, lname, email, favColor, bday})
+    if(result){
+        res.status(200).json({message: "Contact updated successfully", contact: result})
+    } else {
+        res.status(500).json({message: "Error updating contact"})
+    }
+}
+
+ctrl.deleteContact = async (req, res) =>{
+    const id = req.params.id
+    const result = await contactModel.delete(id)
+    if(result){
+        res.status(200).json({message: "Contact deleted successfully"})
+    } else {
+        res.status(500).json({message: "Error deleting contact"})
+    }
+}
+
 module.exports = ctrl
